@@ -28,4 +28,8 @@ describe('Testes da tela Guis', () => {
     expect(screen.getByTestId('mybtn1')).toBeInTheDocument();
   });
 
+  it('Existe botão Excluir em Guis?', () => {
+    expect(screen.getByTestId('mybtn2')).toBeInTheDocument();
+  });
+
 });
