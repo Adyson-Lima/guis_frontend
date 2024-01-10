@@ -1,7 +1,8 @@
+import GuisRouter from "./routes";
 
 function App() {
   return (
-    <></>
+    <GuisRouter/>
   );
 }
 
