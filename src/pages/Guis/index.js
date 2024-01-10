@@ -13,6 +13,15 @@ export default function Guis(){
     .then(response => {setGuis(response.data)})
   }, []);
 
+  // Update, navega para tela de atualização
+  async function updateGui(id){
+    try {
+      navigate(`api/v1/guis/${id}`);      
+    } catch (error) {
+      alert("Erro ao navegar para Update")      
+    }
+  }
+
   return(
     <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
       <div className="card-header bg-primary" style={{color: '#fff'}}>
@@ -41,7 +50,8 @@ export default function Guis(){
                   <td>
 
                     <button data-testid="mybtn1" type="button"
-                    className="btn btn-outline-info">Editar</button>
+                    className="btn btn-outline-info" style={{margin: '2px'}}
+                    onClick={() => updateGui(gui.id)}>Editar</button>
 
                     <button data-testid="mybtn2" type="button"
                     className="btn btn-outline-danger">Excluir</button>
