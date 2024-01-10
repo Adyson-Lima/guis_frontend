@@ -24,4 +24,8 @@ describe('Testes da tela Guis', () => {
     expect(screen.getByTestId('mytable')).toBeInTheDocument();
   });
 
+  it('Existe botão Editar em Guis?', () => {
+    expect(screen.getByTestId('mybtn1')).toBeInTheDocument();
+  });
+
 });
