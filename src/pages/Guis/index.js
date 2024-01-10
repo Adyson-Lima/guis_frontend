@@ -22,6 +22,16 @@ export default function Guis(){
     }
   }
 
+  // Delete, exclui um registro na api
+  async function deleteGui(id){
+    try {
+      await api.delete(`api/v1/guis/${id}`,{});
+      setGuis(my_guis.filter(gui => gui.id !== id));      
+    } catch (error) {
+      alert("Erro ao excluir registro!");      
+    }
+  }
+
   return(
     <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
       <div className="card-header bg-primary" style={{color: '#fff'}}>
@@ -54,7 +64,8 @@ export default function Guis(){
                     onClick={() => updateGui(gui.id)}>Editar</button>
 
                     <button data-testid="mybtn2" type="button"
-                    className="btn btn-outline-danger">Excluir</button>
+                    className="btn btn-outline-danger" style={{margin: '2px'}}
+                    onClick={() => deleteGui(gui.id)}>Excluir</button>
 
                   </td>
               </tr>
